@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ item.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ item.name }}</h1>
+<p>{{ item.description }}</p>
+<p><strong>Price:</strong> ${{ item.price }}</p>
+<p><strong>Created:</strong> {{ item.created_at }}</p>
+
+<a href="{% url 'item_update' item.pk %}">✏️ Edit</a> |
+<a href="{% url 'item_delete' item.pk %}">🗑️ Delete</a> |
+<a href="{% url 'item_list' %}">⬅ Back to list</a>
+{% endblock %}

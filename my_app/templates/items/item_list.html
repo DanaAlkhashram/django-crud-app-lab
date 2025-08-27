@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Items{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Items</h1>
+<a href="{% url 'item_create' %}" class="btn">➕ Add New Item</a>
+
+  <ul class="item-list">
+    {% for item in items %}
+      <li class="item-card">
+        <h2><a href="{% url 'item_detail' item.pk %}" class="btn-detail">{{ item.name }}</a></h2>
+        <p>Price: ${{ item.price }}</p>
+      </li>
+    {% empty %}
+      <li>No items found.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
