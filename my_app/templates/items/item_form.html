@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block title %}
-  {% if view.object %}
-    {{ view.object.name }}
+  {% if object %}
+    {{ object.name }}
   {% else %}
     Add New Item
   {% endif %}
@@ -10,8 +10,8 @@
 
 {% block content %}
 <div class="container">
-    <h1>{% if view.object %}
-        {{ view.object.name }}
+    <h1>{% if object %}
+        {{ object.name }}
     {% else %}
         Add New Item
     {% endif %} </h1>
